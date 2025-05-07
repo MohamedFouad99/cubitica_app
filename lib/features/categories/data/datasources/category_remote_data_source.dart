@@ -13,7 +13,7 @@ class CategoryRemoteDataSourceImpl implements CategoryRemoteDataSource {
 
   @override
   Future<List<CategoryModel>> getCategories() async {
-    final response = await dio.get('${ApiConstants.apiBaseUrl}categories');
+    final response = await dio.get('${ApiConstants.apiBaseUrl}category-list');
     final data = List<String>.from(response.data);
     return data.map((e) => CategoryModel.fromJson(e)).toList();
   }
