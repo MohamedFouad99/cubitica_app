@@ -1,7 +1,7 @@
-class CategoryModel {
-  final String name;
+import '../../domain/entities/category.dart';
 
-  const CategoryModel({required this.name});
+class CategoryModel extends Category {
+  const CategoryModel({required super.name});
 
   factory CategoryModel.fromJson(String name) {
     return CategoryModel(name: name);
