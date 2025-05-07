@@ -6,26 +6,50 @@ import '../../features/categories/data/repositories/category_repository_impl.dar
 import '../../features/categories/domain/repositories/category_repository.dart';
 import '../../features/categories/domain/usecases/get_categories.dart';
 import '../../features/categories/presentation/cubit/category_cubit.dart';
+import '../../features/products/data/datasources/products_remote_data_source.dart';
+import '../../features/products/data/repositories/products_repository_impl.dart';
+import '../../features/products/domain/repositories/products_repository.dart';
+import '../../features/products/domain/usecases/get_products_by_category.dart';
+import '../../features/products/presentation/cubit/products_cubit.dart';
 
-final sl = GetIt.instance;
+final getIt = GetIt.instance;
 
 Future<void> setupServiceLocator() async {
   // External
-  sl.registerLazySingleton<Dio>(() => Dio());
+  getIt.registerLazySingleton<Dio>(() => Dio());
 
   // Data sources
-  sl.registerLazySingleton<CategoryRemoteDataSource>(
-    () => CategoryRemoteDataSourceImpl(dio: sl()),
+  getIt.registerLazySingleton<CategoryRemoteDataSource>(
+    () => CategoryRemoteDataSourceImpl(dio: getIt()),
   );
 
   // Repositories
-  sl.registerLazySingleton<CategoryRepository>(
-    () => CategoryRepositoryImpl(remoteDataSource: sl()),
+  getIt.registerLazySingleton<CategoryRepository>(
+    () => CategoryRepositoryImpl(remoteDataSource: getIt()),
   );
 
   // Use cases
-  sl.registerLazySingleton<GetCategories>(() => GetCategories(sl()));
+  getIt.registerLazySingleton<GetCategories>(() => GetCategories(getIt()));
 
   // Cubits
-  sl.registerFactory(() => CategoryCubit(sl()));
+  getIt.registerFactory(() => CategoryCubit(getIt()));
+  ///////////////////////////////////////////////////////////////////
+  ///PRODUCTS
+  // Data Sources
+  getIt.registerLazySingleton<ProductsRemoteDataSource>(
+    () => ProductsRemoteDataSourceImpl(getIt()),
+  );
+
+  // Repositories
+  getIt.registerLazySingleton<ProductsRepository>(
+    () => ProductsRepositoryImpl(getIt()),
+  );
+
+  // Use Cases
+  getIt.registerLazySingleton<GetProductsByCategory>(
+    () => GetProductsByCategory(getIt()),
+  );
+
+  // Cubits
+  getIt.registerFactory<ProductsCubit>(() => ProductsCubit(getIt()));
 }

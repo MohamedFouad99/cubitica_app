@@ -13,7 +13,7 @@ class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => sl<CategoryCubit>()..fetchCategories(),
+      create: (_) => getIt<CategoryCubit>()..fetchCategories(),
       child: Scaffold(
         appBar: AppBar(title: const Text('Categories')),
         body: BlocBuilder<CategoryCubit, CategoryState>(
