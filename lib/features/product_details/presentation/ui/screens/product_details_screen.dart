@@ -17,8 +17,7 @@ class ProductDetailsScreen extends StatelessWidget {
       body: BlocProvider(
         create:
             (context) =>
-                getIt<ProductDetailsCubit>()
-                  ..getProductDetails(productId), // Fetch the product details
+                getIt<ProductDetailsCubit>()..getProductDetails(productId),
         child: BlocBuilder<ProductDetailsCubit, ProductDetailsState>(
           builder: (context, state) {
             if (state is ProductDetailsLoading) {
@@ -108,7 +107,51 @@ class ProductDetailsScreen extends StatelessWidget {
                     .map((tag) => Chip(label: Text(tag)))
                     .toList(),
           ),
+          const SizedBox(height: 16),
+
+          // Reviews Section
+          const SizedBox(height: 16),
+          Text(
+            'Reviews',
+            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 8),
+          ...productDetails.reviews.map((review) => _buildReview(review)),
         ],
+      ),
+    );
+  }
+
+  Widget _buildReview(Review review) {
+    return Card(
+      margin: const EdgeInsets.only(bottom: 16),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                const Icon(Icons.person, size: 24),
+                const SizedBox(width: 8),
+                Text(
+                  review.username,
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Text(review.comment),
+            const SizedBox(height: 8),
+            Row(
+              children: [
+                const Icon(Icons.star, color: Colors.yellow, size: 16),
+                const SizedBox(width: 4),
+                Text('${review.rating} / 5'),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

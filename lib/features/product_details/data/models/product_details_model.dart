@@ -13,6 +13,7 @@ class ProductDetailsModel extends ProductDetails {
     required super.category,
     required super.sku,
     required super.tags,
+    required super.reviews,
   });
 
   factory ProductDetailsModel.fromJson(Map<String, dynamic> json) {
@@ -28,6 +29,12 @@ class ProductDetailsModel extends ProductDetails {
       category: json['category'],
       sku: json['sku'] ?? 'N/A',
       tags: json['tags'] != null ? List<String>.from(json['tags']) : [],
+      reviews:
+          json['reviews'] != null
+              ? (json['reviews'] as List)
+                  .map((review) => Review.fromJson(review))
+                  .toList()
+              : [],
     );
   }
 }
