@@ -1,8 +1,14 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cubitica_app/core/di/di.dart';
+import 'package:cubitica_app/core/helpers/spacing.dart';
+import 'package:cubitica_app/core/theming/colors.dart';
+import 'package:cubitica_app/core/theming/style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 import '../../../../../core/constants/app_assets.dart';
+import '../../../../../core/widgets/app_bar_widget.dart';
 import '../../../domain/entities/product_details.dart';
 import '../../cubit/product_details_cubit.dart';
 import '../../cubit/product_details_state.dart';
@@ -15,7 +21,8 @@ class ProductDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Product Details')),
+      backgroundColor: ColorsManager.white,
+      appBar: AppBarWidget(title: 'Product Details', hasBackButton: true),
       body: BlocProvider(
         create:
             (context) =>
@@ -38,52 +45,55 @@ class ProductDetailsScreen extends StatelessWidget {
 
   Widget _buildProductDetails(ProductDetails productDetails) {
     return SingleChildScrollView(
-      padding: const EdgeInsets.all(16.0),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Product Title
           Text(
             productDetails.title,
-            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            style: TextStyles.font24BlackBold.copyWith(height: 1.2),
           ),
-          const SizedBox(height: 8),
-
+          verticalSpace(4),
           // Product Price
           Text(
             '\$${productDetails.price}',
-            style: const TextStyle(fontSize: 20, color: Colors.green),
+            style: TextStyles.font20SecondaryRegular,
           ),
-          const SizedBox(height: 16),
-
+          verticalSpace(18),
           // Product Description
           Text(
             productDetails.description,
-            style: const TextStyle(fontSize: 16),
+            style: TextStyles.font16DarkGrayRegular.copyWith(height: 1.3),
           ),
-          const SizedBox(height: 16),
-
-          // Product Images (Carousel/Gallery)
+          verticalSpace(6),
+          // Product Images
           SizedBox(
-            height: 200,
+            height: 200.h,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: productDetails.images.length,
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: const EdgeInsets.only(right: 8.0),
-                  child: Image.network(
-                    productDetails.images[index],
+                  padding: EdgeInsets.only(right: 8.w),
+                  child: CachedNetworkImage(
+                    imageUrl: productDetails.images[index],
                     fit: BoxFit.cover,
-                    width: 150,
-                    height: 150,
+                    width: 180.h,
+                    height: 150.h,
+                    placeholder:
+                        (context, url) => Center(
+                          child: Lottie.asset(AppAssets.imageLoadingGif),
+                        ),
+                    errorWidget:
+                        (context, url, error) =>
+                            const Icon(Icons.broken_image_outlined),
                   ),
                 );
               },
             ),
           ),
-          const SizedBox(height: 16),
-
+          verticalSpace(6),
           // Product Details (Additional Info)
           Text('Brand: ${productDetails.brand}'),
           Text('Category: ${productDetails.category}'),

@@ -3,7 +3,6 @@ import 'package:cubitica_app/features/products/domain/entities/product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
-
 import '../../../../../core/animations/up_down_animation.dart';
 import '../../../../../core/constants/app_assets.dart';
 import '../../../../../core/helpers/spacing.dart';
