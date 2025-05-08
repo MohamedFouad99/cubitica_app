@@ -32,6 +32,7 @@ class ProductsScreen extends StatelessWidget {
                 itemCount: state.products.length,
                 itemBuilder: (context, index) {
                   final product = state.products[index];
+                  print('${product.thumbnail}');
                   return GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(

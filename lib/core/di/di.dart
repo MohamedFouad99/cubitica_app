@@ -17,6 +17,10 @@ import '../../features/products/domain/repositories/products_repository.dart';
 import '../../features/products/domain/usecases/get_products_by_category.dart';
 import '../../features/products/presentation/cubit/products_cubit.dart';
 
+// date: 8 May 2025
+// by: Fouad
+// last modified at: 8 May 2025
+// description: This file contains the service locator used in the application.
 final getIt = GetIt.instance;
 
 Future<void> setupServiceLocator() async {

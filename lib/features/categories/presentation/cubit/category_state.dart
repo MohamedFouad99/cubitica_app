@@ -2,6 +2,11 @@ import 'package:equatable/equatable.dart';
 import '../../../../core/errors/failure.dart';
 import '../../domain/entities/category.dart';
 
+// date: 8 May 2025
+// by: Fouad
+// last modified at: 8 May 2025
+// description: This file contains the CategoryState class which represents
+// the state of categories in the application.
 abstract class CategoryState extends Equatable {
   const CategoryState();
 

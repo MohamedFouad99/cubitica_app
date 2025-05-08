@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import '../../features/categories/presentation/screens/categories_screen.dart';
+import '../../features/categories/presentation/ui/screens/categories_screen.dart';
 
 import '../../features/product_details/presentation/ui/screens/product_details_screen.dart';
 import '../../features/products/presentation/screens/products_screen.dart';
 import 'routes.dart';
 
+// date: 8 May 2025
+// by: Fouad
+// last modified at: 8 May 2025
+// description: This file contains the AppRouter class which handles navigation in the application.
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
     final args = settings.arguments;
