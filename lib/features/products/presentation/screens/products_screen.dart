@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lottie/lottie.dart';
+import '../../../../core/constants/app_assets.dart';
 import '../../../../core/di/di.dart';
 import '../../../../core/routing/routes.dart';
 import '../cubit/products_cubit.dart';
@@ -19,7 +21,7 @@ class ProductsScreen extends StatelessWidget {
         body: BlocBuilder<ProductsCubit, ProductsState>(
           builder: (context, state) {
             if (state is ProductsLoading) {
-              return const Center(child: CircularProgressIndicator());
+              return Center(child: Lottie.asset(AppAssets.loadingGif));
             } else if (state is ProductsLoaded) {
               return GridView.builder(
                 padding: const EdgeInsets.all(8),

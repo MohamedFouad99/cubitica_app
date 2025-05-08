@@ -1,6 +1,8 @@
 import 'package:cubitica_app/core/di/di.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lottie/lottie.dart';
+import '../../../../../core/constants/app_assets.dart';
 import '../../../domain/entities/product_details.dart';
 import '../../cubit/product_details_cubit.dart';
 import '../../cubit/product_details_state.dart';
@@ -21,7 +23,7 @@ class ProductDetailsScreen extends StatelessWidget {
         child: BlocBuilder<ProductDetailsCubit, ProductDetailsState>(
           builder: (context, state) {
             if (state is ProductDetailsLoading) {
-              return const Center(child: CircularProgressIndicator());
+              return Center(child: Lottie.asset(AppAssets.loadingGif));
             } else if (state is ProductDetailsError) {
               return Center(child: Text(state.message));
             } else if (state is ProductDetailsLoaded) {
