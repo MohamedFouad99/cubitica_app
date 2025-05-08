@@ -87,9 +87,7 @@ class CategoryListWidget extends StatelessWidget {
                       maxLines: 1,
                       category.name.beautify(),
                       textAlign: TextAlign.center,
-                      style: TextStyles.font14BlackBold.copyWith(
-                        fontSize: 14.sp,
-                      ),
+                      style: TextStyles.font14BlackBold,
                     ),
                   ),
                 ],

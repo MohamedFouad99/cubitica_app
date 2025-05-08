@@ -10,6 +10,12 @@ import 'font_weight_helper.dart';
 // description: This file contains the TextStyles class which defines the text styles used in the application.
 class TextStyles {
   static String fontFamily = 'Almarai';
+  static TextStyle font14BlackRegular = TextStyle(
+    fontFamily: fontFamily,
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: Colors.black,
+  );
   static TextStyle font14BlackBold = TextStyle(
     fontFamily: fontFamily,
     fontSize: 14.sp,

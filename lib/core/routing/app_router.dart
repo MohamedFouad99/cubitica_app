@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../features/categories/presentation/ui/screens/categories_screen.dart';
 
 import '../../features/product_details/presentation/ui/screens/product_details_screen.dart';
-import '../../features/products/presentation/screens/products_screen.dart';
+import '../../features/products/presentation/ui/screens/products_screen.dart';
 import 'routes.dart';
 
 // date: 8 May 2025
@@ -12,7 +12,6 @@ import 'routes.dart';
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
     final args = settings.arguments;
-
     switch (settings.name) {
       case Routes.categories:
         return MaterialPageRoute(builder: (_) => const CategoriesScreen());

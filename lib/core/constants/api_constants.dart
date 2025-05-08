@@ -5,5 +5,7 @@
 
 class ApiConstants {
   static const String apiBaseUrl = 'https://dummyjson.com/products/';
+
+  static const String category = 'category/';
   static const String categoryList = 'category-list';
 }

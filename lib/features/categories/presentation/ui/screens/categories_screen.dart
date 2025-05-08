@@ -6,7 +6,7 @@ import '../../../../../core/theming/colors.dart';
 import '../../cubit/category_cubit.dart';
 import '../../cubit/category_state.dart';
 import '../../../../../core/di/di.dart';
-import '../widgets/app_bar_widget.dart';
+import '../../../../../core/widgets/app_bar_widget.dart';
 import '../widgets/category_list_widget.dart';
 
 // date: 8 May 2025
@@ -33,7 +33,7 @@ class CategoriesScreen extends StatelessWidget {
       create: (_) => getIt<CategoryCubit>()..fetchCategories(),
       child: Scaffold(
         backgroundColor: ColorsManager.white,
-        appBar: const AppBarWidget(),
+        appBar: const AppBarWidget(title: 'Categories', hasBackButton: false),
         body: BlocBuilder<CategoryCubit, CategoryState>(
           builder: (context, state) {
             if (state is CategoryLoading) {
