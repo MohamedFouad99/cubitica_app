@@ -1,7 +1,12 @@
 import 'package:equatable/equatable.dart';
+
 import '../../domain/entities/product_details.dart';
 
-// Base class for product details states
+// date: 8 May 2025
+// by: Fouad
+// last modified at: 9 May 2025
+// description: This file contains the ProductDetailsState class which is
+// used to manage the state of the product details screen.
 abstract class ProductDetailsState extends Equatable {
   @override
   List<Object?> get props => [];

@@ -1,9 +1,10 @@
-import 'package:cubitica_app/core/helpers/string_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
+
 import '../../../../../core/constants/app_assets.dart';
 import '../../../../../core/di/di.dart';
+import '../../../../../core/helpers/string_extensions.dart';
 import '../../../../../core/theming/colors.dart';
 import '../../../../../core/widgets/app_bar_widget.dart';
 import '../../cubit/products_cubit.dart';

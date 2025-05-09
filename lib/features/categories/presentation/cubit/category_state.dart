@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+
 import '../../../../core/errors/failure.dart';
 import '../../domain/entities/category.dart';
 

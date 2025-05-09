@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../features/categories/presentation/ui/screens/categories_screen.dart';
 
+import '../../features/categories/presentation/ui/screens/categories_screen.dart';
 import '../../features/product_details/presentation/ui/screens/product_details_screen.dart';
 import '../../features/products/presentation/ui/screens/products_screen.dart';
 import 'routes.dart';

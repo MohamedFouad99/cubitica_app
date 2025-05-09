@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
+
 import '../../../../../core/constants/app_assets.dart';
+import '../../../../../core/di/di.dart';
 import '../../../../../core/theming/colors.dart';
+import '../../../../../core/widgets/app_bar_widget.dart';
 import '../../cubit/category_cubit.dart';
 import '../../cubit/category_state.dart';
-import '../../../../../core/di/di.dart';
-import '../../../../../core/widgets/app_bar_widget.dart';
 import '../widgets/category_list_widget.dart';
 
 // date: 8 May 2025

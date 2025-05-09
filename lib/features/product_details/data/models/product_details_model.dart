@@ -1,5 +1,10 @@
 import '../../domain/entities/product_details.dart';
 
+// date: 8 May 2025
+// by: Fouad
+// last modified at: 9 May 2025
+// description: This file contains the ProductDetailsModel class which
+// represents the product details data model.
 class ProductDetailsModel extends ProductDetails {
   ProductDetailsModel({
     required super.id,

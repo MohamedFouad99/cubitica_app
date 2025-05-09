@@ -1,4 +1,4 @@
-import 'package:cubitica_app/core/helpers/string_extensions.dart';
+import '../../../../../core/helpers/string_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/animations/up_down_animation.dart';

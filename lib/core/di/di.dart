@@ -1,4 +1,3 @@
-import 'package:cubitica_app/features/product_details/domain/usecases/fetch_product_details_usecase.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
@@ -10,6 +9,7 @@ import '../../features/categories/presentation/cubit/category_cubit.dart';
 import '../../features/product_details/data/data_sources/product_details_remote_data_source.dart';
 import '../../features/product_details/data/repositories/products_details_repo_impl.dart';
 import '../../features/product_details/domain/repositories/product_details_repo.dart';
+import '../../features/product_details/domain/usecases/fetch_product_details_usecase.dart';
 import '../../features/product_details/presentation/cubit/product_details_cubit.dart';
 import '../../features/products/data/datasources/products_remote_data_source.dart';
 import '../../features/products/data/repositories/products_repository_impl.dart';

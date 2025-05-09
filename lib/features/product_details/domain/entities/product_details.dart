@@ -1,3 +1,8 @@
+// date: 8 May 2025
+// by: Fouad
+// last modified at: 9 May 2025
+// description: This file contains the ProductDetails class
+// which represents the product details Entity in the application.
 class ProductDetails {
   final int id;
   final String title;
@@ -10,7 +15,7 @@ class ProductDetails {
   final String brand;
   final String category;
   final List<String> tags;
-  final List<Review> reviews; // Add the reviews list
+  final List<Review> reviews;
 
   ProductDetails({
     required this.id,
@@ -24,7 +29,7 @@ class ProductDetails {
     required this.brand,
     required this.category,
     required this.tags,
-    required this.reviews, // Include reviews in constructor
+    required this.reviews,
   });
 }
 
