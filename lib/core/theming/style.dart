@@ -22,15 +22,27 @@ class TextStyles {
     fontWeight: FontWeightHelper.regular,
     color: ColorsManager.darkGray,
   );
-  static TextStyle font20SecondaryRegular = TextStyle(
+  static TextStyle font14DarkGrayRegular = TextStyle(
+    fontFamily: fontFamily,
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.darkGray,
+  );
+  static TextStyle font20SecondaryBold = TextStyle(
     fontFamily: fontFamily,
     fontSize: 20.sp,
-    fontWeight: FontWeightHelper.regular,
+    fontWeight: FontWeightHelper.bold,
     color: ColorsManager.secondary,
   );
   static TextStyle font14BlackBold = TextStyle(
     fontFamily: fontFamily,
     fontSize: 14.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: Colors.black,
+  );
+  static TextStyle font18BlackBold = TextStyle(
+    fontFamily: fontFamily,
+    fontSize: 18.sp,
     fontWeight: FontWeightHelper.bold,
     color: Colors.black,
   );
